@@ -6,13 +6,13 @@ public class MidtermAct07
 	public static void main (String[] args) throws java.io.IOException {
 		Terminal terminal = new DefaultTerminalFactory().createTerminal();
 		terminal.enterPrivateMode();
-		int i,j;
-		for (i=1;i<21;i++){
-			terminal.setCursorPosition(i,1);
-			terminal.putCharacter('X');
-		}for (j=1;j<21;j++){
-			terminal.setCursorPosition(j,2);
-			terminal.putCharacter('X');
+		int row,col;
+		for (row=1;row<21;row++) {
+			terminal.setCursorPosition(1,row);
+			for (col=1;col<21;col++) {
+				terminal.putCharacter('X');
+			}
+			System.out.println();
 		}
 		terminal.flush();
 		terminal.readInput();
